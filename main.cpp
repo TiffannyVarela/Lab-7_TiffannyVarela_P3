@@ -4,8 +4,7 @@
 #include "WaterBender.h"
 #include "EarthBender.h"
 #include "NonBender.h"
-#include "Ofensivos.h"
-#include "Bender.h"
+
 #include <iostream>
 using std::cout;
 using std::cin;
@@ -25,8 +24,7 @@ int main(){
     int opc2=0;
     int opc3=0;
     Persona* persona;
-    Bender* bender;
-    string nacion_origen, nombre, sexo;
+    string nacion_origen, nombre, sexo,poder;
     int edad;
     AirBender* airbender;
     string cant_pelo, color_flechas;
@@ -38,8 +36,10 @@ int main(){
     int coles, graduacion;
     NonBender* nonbender;
     string trabajo, fuerza, velocidad;
-    Ofensivos* ofensivo;
     string rango, fuerza2;
+
+
+    AirBender aang = AirBender("1", "azules", "avatar","Honduras", "Aang", "Indefinido", "airecito", 1);      
     switch (opc=menu())
     {
     case 1:    
@@ -62,8 +62,7 @@ int main(){
                 cin>>rango;
                 cout<<"Fuerza: "<<endl;
                 cin>>fuerza;
-                ofensivo = new Ofensivos(rango, fuerza);
-                bender = new Bender (ofensivo);
+                poder="Ofensivo: Rango-> "+rango+" Fuerza->"+fuerza;
                 break;
 
             case 2:
@@ -80,7 +79,9 @@ int main(){
                 
             }
         }
-        
+        else{
+            poder="Ninguno";
+        }
         switch (opc2)
         {
         case 1:
@@ -88,7 +89,7 @@ int main(){
             cin>>cant_pelo;
             cout<<"Color de Flechas: "<<endl;
             cin>>color_flechas;
-            airbender = new AirBender(cant_pelo, color_flechas);
+            airbender = new AirBender( "5", color_flechas, poder,  nacion_origen, nombre, sexo, "Aire", edad);
             break;
 
         case 2:
@@ -96,7 +97,7 @@ int main(){
             cin>>num_cicatrices;
             cout<<"Numero de Victorias: "<<endl;
             cin>>num_victorias;
-            firebender = new FireBender(num_cicatrices, num_victorias);
+            firebender = new FireBender(num_cicatrices, num_victorias,poder,  nacion_origen, nombre, sexo, "Fuego", edad);
             break;
 
         case 3:
@@ -104,7 +105,7 @@ int main(){
             cin>>tribu;
             cout<<"Arma de Preferencia: "<<endl;
             cin>>arma;
-            waterbender = new WaterBender (tribu, arma);
+            waterbender = new WaterBender (tribu, arma,poder,   nacion_origen, nombre, sexo, "Normal", edad);
             break;
 
         case 4:
@@ -117,7 +118,7 @@ int main(){
                 cout<<"Graduacion de Ojos: "<<endl;
                 cin>>graduacion;
             }
-            earthbender = new EarthBender(coles, graduacion, bender);
+            earthbender = new EarthBender(coles, graduacion,poder,  nacion_origen, nombre, sexo, "Tierra", edad);
             break;
 
         case 5:
@@ -127,11 +128,10 @@ int main(){
             cin>>fuerza;
             cout<<"Velocidad: "<<endl;
             cin>>velocidad;
-            nonbender = new NonBender(trabajo, fuerza, velocidad);
+            nonbender = new NonBender(trabajo, fuerza, velocidad, poder,  nacion_origen, nombre, sexo, "Normal", edad);
             cout<<nonbender->toString()<<endl;
             break;                
         }
-        persona = new Persona (tribu, nombre, edad, bender);
         break;
 
     case 2:    

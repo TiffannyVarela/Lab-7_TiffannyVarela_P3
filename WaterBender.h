@@ -1,17 +1,17 @@
-#include "Bender.h"
+#include "Persona.h"
 #ifndef WATERBENDER_H
 #define WATERBENDER_H
 
 #include <string>
 using std::string;
 
-class WaterBender:public Bender
+class WaterBender:public Persona
 {
-private:
-    string tribu_origen, arma_preferida;
 public:
+    string tribu_origen, arma_preferida, poder;
+
     WaterBender();
-    WaterBender(string, string);
+    WaterBender(string, string, string,string, string, string, string, int);
     virtual string toString();
 };
 

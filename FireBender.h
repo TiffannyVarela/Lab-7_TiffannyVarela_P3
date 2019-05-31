@@ -1,17 +1,17 @@
-#include "Bender.h"
+#include "Persona.h"
 #ifndef FIREBENDER_H
 #define FIREBENDER_H
 
 #include <string>
 using std::string;
 
-class FireBender:public Bender
+class FireBender:public Persona
 {
-private:
-    int num_cicatrices, num_victorias;
 public:
+    int num_cicatrices, num_victorias;
+    string poder;
     FireBender();
-    FireBender(int, int);
+    FireBender(int, int,string,string, string, string, string, int);
     virtual string toString();
 };
 

@@ -7,11 +7,11 @@ using std::string;
 
 class NonBender:public Persona
 {
-private:
-    string trabajo, fuerza, velocidad;
 public:
+    string trabajo, fuerza, velocidad, poder;
+
     NonBender();
-    NonBender(string, string, string);
+    NonBender(string, string, string, string, string, string, string, string, int);
     virtual string toString();
 };
 

@@ -1,19 +1,16 @@
 #ifndef PERSONA_H
 #define PERSONA_H
-#include "Bender.h"
 #include <string>
 using std::string;
 
 class Persona
 {
-private:
-    string nacion_origen, nombre, sexo;
-    Bender* bender = new Bender();
-    //PoderEspecial* pe = new PoderEspecial();
-    int edad;
 public:
+    string nacion_origen, nombre, sexo, elemento;
+    int edad;
+
     Persona();
-    Persona(string, string, int, string, Bender*);
+    Persona(string, string, string , string, int);
     virtual string toString();
 };
 

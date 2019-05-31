@@ -1,17 +1,17 @@
-#include "Bender.h"
+#include "Persona.h"
 #ifndef AIRBENDER_H
 #define AIRBENDER_H
 
 #include <string>
 using std::string;
 
-class AirBender:public Bender
+class AirBender:public Persona
 {
-private:
-    string cant_pelo, color_flechas;
 public:
+    string cant_pelo, color_flechas, poder;
+
     AirBender();
-    AirBender(string, string);
+    AirBender(string, string, string, string, string, string, string, int);
     virtual string toString();
 };
 
